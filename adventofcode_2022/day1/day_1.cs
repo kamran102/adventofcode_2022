@@ -7,9 +7,9 @@ public class day_1 : IDay
         base_path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!;
     }
 
-    public string FirstFilePath =>  base_path + "/day_1/input_1.txt";
+    public string FirstFilePath =>  base_path + "/day1/input_1.txt";
 
-    public string SecondFilePath => base_path + "/day_1/input_1.txt";
+    public string SecondFilePath => base_path + "/day1/input_1.txt";
 
     public int GetFirstOutput(string[] data)
     {
