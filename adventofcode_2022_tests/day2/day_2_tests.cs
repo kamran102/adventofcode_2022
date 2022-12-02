@@ -3,20 +3,9 @@ namespace adventofcode_2022_tests.day2;
 public class day_2_tests
 {
     string[] input = {
-        "1000",
-        "2000",
-        "3000",
-        "",
-        "4000",
-        "",
-        "5000",
-        "6000",
-        "",
-        "7000",
-        "8000",
-        "9000",
-        "",
-        "10000"
+        "A Y",
+        "B X",
+        "C Z"
     };
 
     public day_2_tests()
@@ -30,7 +19,7 @@ public class day_2_tests
     public void GetFirstOutput_TestDataset_CalculatesTotal()
     {
         // Arrange
-        int expected = 24000;
+        int expected = 15;
         IDay sut = GetSut();
 
         // Act
@@ -48,7 +37,7 @@ public class day_2_tests
     public void GetSecondOutput_TestDatasett_CalculatesTotal()
     {
         // Arrange
-        int expected = 45000;
+        int expected = 12;
         IDay sut = GetSut();
 
         // Act
@@ -63,6 +52,6 @@ public class day_2_tests
     #region Helper functions
 
     private IDay GetSut() => new day_2();
-    
+
     #endregion
 }
