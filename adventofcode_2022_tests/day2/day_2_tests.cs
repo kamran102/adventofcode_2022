@@ -26,7 +26,7 @@ public class day_2_tests
         var actual = sut.GetFirstOutput(input);
 
         // Assert
-        actual.Equals(expected);
+        actual.Should().Be(expected);
     }
 
     #endregion
@@ -44,7 +44,7 @@ public class day_2_tests
         var actual = sut.GetSecondOutput(input);
 
         // Assert
-        actual.Equals(expected);
+        actual.Should().Be(expected);
     }
 
     #endregion

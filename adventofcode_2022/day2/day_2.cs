@@ -11,6 +11,8 @@ public partial class day_2 : IDay
         base_path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!;
     }
 
+    public string Day => "Day 2";
+
     public string FirstFilePath => base_path + "/day2/input_1.txt";
 
     public string SecondFilePath => base_path + "/day2/input_1.txt";
