@@ -41,20 +41,6 @@ public class day_4 : IDay
         return count;
     }
 
-    private void GetDataValue(string item, out IEnumerable<int> i1, out IEnumerable<int> i2)
-    {
-        var str = item.Split(',');
-        var f1 = Int32.Parse(str[0].Split('-')[0]);
-        var l1 = Int32.Parse(str[0].Split('-')[1]);
-
-        var f2 = Int32.Parse(str[1].Split('-')[0]);
-        var l2 = Int32.Parse(str[1].Split('-')[1]);
-
-
-        i1 = numbers.Skip(f1).Take(l1 - f1 + 1);
-        i2 = numbers.Skip(f2).Take(l2 - f2 + 1);
-    }
-
     public int GetSecondOutput(string[] data)
     {
         int count = 0;
@@ -72,5 +58,18 @@ public class day_4 : IDay
         }
 
         return count;
+    }
+
+    private void GetDataValue(string item, out IEnumerable<int> i1, out IEnumerable<int> i2)
+    {
+        var str = item.Split(',');
+        var f1 = Int32.Parse(str[0].Split('-')[0]);
+        var l1 = Int32.Parse(str[0].Split('-')[1]);
+
+        var f2 = Int32.Parse(str[1].Split('-')[0]);
+        var l2 = Int32.Parse(str[1].Split('-')[1]);
+
+        i1 = numbers.Skip(f1).Take(l1 - f1 + 1);
+        i2 = numbers.Skip(f2).Take(l2 - f2 + 1);
     }
 }

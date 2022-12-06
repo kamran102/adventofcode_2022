@@ -1,3 +1,6 @@
+using adventofcode_2022.day;
+using adventofcode_2022.day2;
+
 namespace adventofcode_2022_tests.day2;
 
 public class day_2_tests

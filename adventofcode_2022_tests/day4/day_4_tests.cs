@@ -1,3 +1,4 @@
+using adventofcode_2022.day;
 using adventofcode_2022.day4;
 
 namespace adventofcode_2022_tests.day4;

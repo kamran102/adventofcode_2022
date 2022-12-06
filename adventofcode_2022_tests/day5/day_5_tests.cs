@@ -1,9 +1,9 @@
 using adventofcode_2022.day;
-using adventofcode_2022.day1;
+using adventofcode_2022.day5;
 
-namespace adventofcode_2022_tests.day1;
+namespace adventofcode_2022_tests.day5;
 
-public class day_1_tests
+public class day_5_tests
 {
     string[] input = {
         "1000",
@@ -22,7 +22,7 @@ public class day_1_tests
         "10000"
     };
 
-    public day_1_tests()
+    public day_5_tests()
     {
 
     }
@@ -65,7 +65,7 @@ public class day_1_tests
 
     #region Helper functions
 
-    private IDay GetSut() => new day_1();
+    private IDay GetSut() => new day_5();
     
     #endregion
 }
