@@ -1,20 +1,23 @@
 using adventofcode_2022.day;
-using adventofcode_2022.day4;
+using adventofcode_2022.day5;
 
-namespace adventofcode_2022_tests.day4;
+namespace adventofcode_2022_tests.day5;
 
-public class day_4_tests
+public class day_5_tests
 {
     string[] input = {
-        "2-4,6-8",
-        "2-3,4-5",
-        "5-7,7-9",
-        "2-8,3-7",
-        "6-6,4-6",
-        "2-6,4-8"
+        "    [D]    ",
+        "[N] [C]    ",
+        "[Z] [M] [P]",
+        " 1   2   3 ",
+        "",
+        "move 1 from 2 to 1",
+        "move 3 from 1 to 3",
+        "move 2 from 2 to 1",
+        "move 1 from 1 to 2"
     };
 
-    public day_4_tests()
+    public day_5_tests()
     {
 
     }
@@ -25,7 +28,7 @@ public class day_4_tests
     public void GetFirstOutput_TestDataset_CalculatesTotal()
     {
         // Arrange
-        var expected = "2";
+        var expected = "CMZ";
         var sut = GetSut();
 
         // Act
@@ -43,7 +46,7 @@ public class day_4_tests
     public void GetSecondOutput_TestDatasett_CalculatesTotal()
     {
         // Arrange
-        var expected = "4";
+        var expected = "MCD";
         var sut = GetSut();
 
         // Act
@@ -57,7 +60,7 @@ public class day_4_tests
 
     #region Helper functions
 
-    private IDay GetSut() => new day_4();
+    private IDay GetSut() => new day_5();
     
     #endregion
 }

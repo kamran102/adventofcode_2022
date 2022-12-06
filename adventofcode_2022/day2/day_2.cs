@@ -17,7 +17,7 @@ public partial class day_2 : IDay
 
     public string SecondFilePath => base_path + "/day2/input_1.txt";
 
-    public int GetFirstOutput(string[] data)
+    public string GetFirstOutput(string[] data)
     {
         var total = 0;
         foreach (var item in data)
@@ -25,10 +25,10 @@ public partial class day_2 : IDay
             total += DetermineRoundPoints(item);
         }
 
-        return total;
+        return total.ToString();
     }
 
-    public int GetSecondOutput(string[] data)
+    public string GetSecondOutput(string[] data)
     {
         var total = 0;
         foreach (var item in data)
@@ -36,7 +36,7 @@ public partial class day_2 : IDay
             total += DetermineRoundPointsBySelection(item);
         }
 
-        return total;
+        return total.ToString();
     }
 
     private int DetermineRoundPoints(string round)

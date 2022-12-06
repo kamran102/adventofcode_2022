@@ -5,6 +5,6 @@ public interface IDay
     string Day { get; }
     string FirstFilePath { get; }
     string SecondFilePath { get; }
-    int GetFirstOutput(string[] data);
-    int GetSecondOutput(string[] data);
+    string GetFirstOutput(string[] data);
+    string GetSecondOutput(string[] data);
 }

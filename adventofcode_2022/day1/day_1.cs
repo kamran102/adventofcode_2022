@@ -13,7 +13,7 @@ public class day_1 : IDay
 
     public string SecondFilePath => base_path + "/day1/input_1.txt";
 
-    public int GetFirstOutput(string[] data)
+    public string GetFirstOutput(string[] data)
     {
         // Need to know the highest
         int best = 0;
@@ -40,10 +40,10 @@ public class day_1 : IDay
 
         current = 0;
 
-        return best;
+        return best.ToString();
     }
 
-    public int GetSecondOutput(string[] data)
+    public string GetSecondOutput(string[] data)
     {
         List<int> totals = new List<int>();
         
@@ -63,6 +63,6 @@ public class day_1 : IDay
             totals[idx] += Int32.Parse(item);
         }
 
-        return totals.OrderByDescending(p=>p).Take(3).Sum();
+        return totals.OrderByDescending(p=>p).Take(3).Sum().ToString();
     }
 }

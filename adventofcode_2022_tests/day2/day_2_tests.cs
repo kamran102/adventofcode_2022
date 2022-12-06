@@ -1,3 +1,6 @@
+using adventofcode_2022.day;
+using adventofcode_2022.day2;
+
 namespace adventofcode_2022_tests.day2;
 
 public class day_2_tests
@@ -19,8 +22,8 @@ public class day_2_tests
     public void GetFirstOutput_TestDataset_CalculatesTotal()
     {
         // Arrange
-        int expected = 15;
-        IDay sut = GetSut();
+        var expected = "15";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input);
@@ -37,8 +40,8 @@ public class day_2_tests
     public void GetSecondOutput_TestDatasett_CalculatesTotal()
     {
         // Arrange
-        int expected = 12;
-        IDay sut = GetSut();
+        var expected = "12";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetSecondOutput(input);
