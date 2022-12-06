@@ -22,7 +22,7 @@ public class day_4 : IDay
 
     public string SecondFilePath => base_path + "/day4/input_1.txt";
 
-    public int GetFirstOutput(string[] data)
+    public string GetFirstOutput(string[] data)
     {
         int count = 0;
 
@@ -38,10 +38,10 @@ public class day_4 : IDay
             }
         }
 
-        return count;
+        return count.ToString();
     }
 
-    public int GetSecondOutput(string[] data)
+    public string GetSecondOutput(string[] data)
     {
         int count = 0;
 
@@ -57,7 +57,7 @@ public class day_4 : IDay
             }
         }
 
-        return count;
+        return count.ToString();
     }
 
     private void GetDataValue(string item, out IEnumerable<int> i1, out IEnumerable<int> i2)

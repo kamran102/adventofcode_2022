@@ -14,7 +14,7 @@ public class day_3 : IDay
 
     public string SecondFilePath => base_path + "/day3/input_1.txt";
 
-    public int GetFirstOutput(string[] data)
+    public string GetFirstOutput(string[] data)
     {
         int total = 0;
         List<char> chars = new List<char>();
@@ -45,10 +45,10 @@ public class day_3 : IDay
         {
             total += cList.IndexOf(c) + 1;
         }
-        return total;
+        return total.ToString();
     }
 
-    public int GetSecondOutput(string[] data)
+    public string GetSecondOutput(string[] data)
     {
         int total = 0;
         List<char> chars = new List<char>();
@@ -77,6 +77,6 @@ public class day_3 : IDay
         {
             total += cList.IndexOf(c) + 1;
         }
-        return total;
+        return total.ToString();
     }
 }

@@ -25,8 +25,8 @@ public class day_4_tests
     public void GetFirstOutput_TestDataset_CalculatesTotal()
     {
         // Arrange
-        int expected = 2;
-        IDay sut = GetSut();
+        var expected = "2";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input);
@@ -43,8 +43,8 @@ public class day_4_tests
     public void GetSecondOutput_TestDatasett_CalculatesTotal()
     {
         // Arrange
-        int expected = 4;
-        IDay sut = GetSut();
+        var expected = "4";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetSecondOutput(input);

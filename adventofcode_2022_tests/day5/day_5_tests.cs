@@ -6,20 +6,15 @@ namespace adventofcode_2022_tests.day5;
 public class day_5_tests
 {
     string[] input = {
-        "1000",
-        "2000",
-        "3000",
+        "    [D]    ",
+        "[N] [C]    ",
+        "[Z] [M] [P]",
+        " 1   2   3 ",
         "",
-        "4000",
-        "",
-        "5000",
-        "6000",
-        "",
-        "7000",
-        "8000",
-        "9000",
-        "",
-        "10000"
+        "move 1 from 2 to 1",
+        "move 3 from 1 to 3",
+        "move 2 from 2 to 1",
+        "move 1 from 1 to 2"
     };
 
     public day_5_tests()
@@ -33,8 +28,8 @@ public class day_5_tests
     public void GetFirstOutput_TestDataset_CalculatesTotal()
     {
         // Arrange
-        int expected = 24000;
-        IDay sut = GetSut();
+        var expected = "CMZ";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input);
@@ -51,8 +46,8 @@ public class day_5_tests
     public void GetSecondOutput_TestDatasett_CalculatesTotal()
     {
         // Arrange
-        int expected = 45000;
-        IDay sut = GetSut();
+        var expected = "MCD";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetSecondOutput(input);

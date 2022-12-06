@@ -25,8 +25,8 @@ public class day_3_tests
     public void GetFirstOutput_TestDataset1Row_CalculatesTotal()
     {
         // Arrange
-        int expected = 16;
-        IDay sut = GetSut();
+        var expected = "16";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input.Take(1).ToArray());
@@ -39,8 +39,8 @@ public class day_3_tests
     public void GetFirstOutput_TestDataset2Rows_CalculatesTotal()
     {
         // Arrange
-        int expected = 54;
-        IDay sut = GetSut();
+        var expected = "54";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input.Take(2).ToArray());
@@ -53,8 +53,8 @@ public class day_3_tests
     public void GetFirstOutput_TestDataset_CalculatesTotal()
     {
         // Arrange
-        int expected = 157;
-        IDay sut = GetSut();
+        var expected = "157";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input);
@@ -71,8 +71,8 @@ public class day_3_tests
     public void GetSecondOutput_TestDatasett_CalculatesTotal()
     {
         // Arrange
-        int expected = 70;
-        IDay sut = GetSut();
+        var expected = "70";
+        var sut = GetSut();
 
         // Act
         var actual = sut.GetSecondOutput(input);
