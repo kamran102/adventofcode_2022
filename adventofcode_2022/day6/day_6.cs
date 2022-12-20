@@ -14,14 +14,14 @@ public class day_6 : IDay
         base_path = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location)!;
     }
 
-    public int GetFirstOutput(string[] data)
+    public string GetFirstOutput(string[] data)
     {
-        return PacketMachine(data[0], 4);
+        return PacketMachine(data[0], 4).ToString();
     }
 
-    public int GetSecondOutput(string[] data)
+    public string GetSecondOutput(string[] data)
     {
-        return PacketMachine(data[0], 14);
+        return PacketMachine(data[0], 14).ToString();
     }
 
     private int PacketMachine(string data, int indicatorLength)
