@@ -48,6 +48,7 @@ public class Day_20 : IDay
         return (res.Sum()).ToString();
     }
 
+
     public static int[] SpliceArray(int[] current, int move)
     {
         if (move == 0) return current.ToArray();
