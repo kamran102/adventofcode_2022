@@ -27,14 +27,14 @@ public class Day_20_Tests
     public void GetFirstOutput_SampleInput_Returns_ExpectedResult_Test()
     {
         // Arrange
-        var expected = "";
+        var expected = "3";
         var sut = GetSut();
 
         // Act
         var actual = sut.GetFirstOutput(input);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().Be(expected);
     }
         
     #endregion
@@ -46,6 +46,7 @@ public class Day_20_Tests
 
     #region No Wrap
 
+    // Move up within the array - start to mid
     [Fact]
     public void SpliceArray_GivenPositiveAtPosZero_NoWrap_Returns_ExpectedArray_Test()
     {
@@ -58,9 +59,10 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, 1);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
+    // Move up within the array - mid to mid
     [Fact]
     public void SpliceArray_GivenPositiveMidArray_NoWrap_Returns_ExpectedArray_Test()
     {
@@ -73,9 +75,25 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, 2);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
+    // Move up within the array = start to end
+    [Fact]
+    public void SpliceArray_GivenPositiveStartArray_ToLastItem_NoWrap_Returns_ExpectedArray_Test()
+    {
+        // Arrange
+        var input = new int[] { 5, 2, 3, 4, 1, 6 };
+        var expected = new int[] { 2, 3, 4, 1, 6,5 };
+
+        // Act
+        var actual = Day_20.SpliceArray(input, 5);
+
+        // Assert
+        actual.Should().ContainInOrder(expected);
+    }
+
+    // Move up within the array = mid to end
     [Fact]
     public void SpliceArray_GivenPositiveMidArray_ToLastItem_NoWrap_Returns_ExpectedArray_Test()
     {
@@ -87,25 +105,26 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, 3);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     #endregion
 
     #region Wrap
 
+    // Wraps over - Start wrap to Same 
     [Fact]
-    public void SpliceArray_GivenPositiveFirstItemInArray_WrapPastItsOrginalPosition_Returns_ExpectedArray_Test()
+    public void SpliceArray_GivenPositiveFirstItemInArray_WrapToOrginalPosition_Returns_ExpectedArray_Test()
     {
         // Arrange
-        var input = new int[] { 7, 2, 3, 4, 5, 6 };
-        var expected = new int[] { 2, 7, 3, 4, 5, 6 };
+        var input = new int[] { 6, 2, 3, 4, 5, 7 };
+        var expected = new int[] { 6, 2, 3, 4, 5, 7 };
 
         // Act
-        var actual = Day_20.SpliceArray(input, 7);
+        var actual = Day_20.SpliceArray(input, 6);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     [Fact]
@@ -119,7 +138,7 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, 4);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     [Fact]
@@ -133,7 +152,7 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, 8);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     #endregion
@@ -155,7 +174,7 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, -2);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     [Fact]
@@ -169,7 +188,7 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, -2);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
 
     #endregion
@@ -187,7 +206,21 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, -5);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
+    }
+
+    [Fact]
+    public void SpliceArray_GivenNegativeMidArrayItem_MovesToFirstItem_Returns_ExpectedArray_Test()
+    {
+        // Arrange
+        var input = new int[] { 1, 2, 3, -3, -2, 4, -5, 6, 7, 8 };
+        var expected = new int[] { 1, -5, 2, 3, -3, -2, 4, 6, 7, 8 };
+
+        // Act
+        var actual = Day_20.SpliceArray(input, -5);
+
+        // Assert
+        actual.Should().ContainInOrder(expected);
     }
 
     [Fact]
@@ -201,7 +234,7 @@ public class Day_20_Tests
         var actual = Day_20.SpliceArray(input, -9);
 
         // Assert
-        actual.Should().BeEquivalentTo(expected);
+        actual.Should().ContainInOrder(expected);
     }
         
     #endregion

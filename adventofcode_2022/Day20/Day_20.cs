@@ -16,50 +16,44 @@ public class Day_20 : IDay
     public string GetFirstOutput(string[] data)
     {
         var input = ParseInput(data);
+        Console.WriteLine(input.Count());
+        Console.WriteLine(input.Distinct().Count());
+
+        if (input.Count() != input.Distinct().Count()) throw new InvalidOperationException();
         var current = ParseInput(data);
 
-        var oneThou = 0;
-        var twoThou = 0;
-        var threeThou = 0;
-
-        var i = 0;
         var inputIdx = 0;
         Console.WriteLine(String.Join(",", current));
-        while (i <= 3000)
+        var res = new List<int>();
+        for (int x = 0; x < 3; x++)
         {
-            var move = input[inputIdx];
+            for (int i = 0; i < 1000; i++)
+            {
 
-            current = SpliceArray(current, move);
-            Console.WriteLine($"Moving {move} : {String.Join(",", current)}");
+                var move = input[inputIdx];
 
-            if (i == 1000)
-            {
-                var zero = Array.IndexOf(current, 0);
-                oneThou = current[zero + 1];
+                current = SpliceArray(current, move);
+                //Console.WriteLine($"Moving {move} : {String.Join(",", current)}");
+                inputIdx++;
+                if (inputIdx >= input.Length) inputIdx = 0;
             }
-            if (i == 2000)
-            {
-                var zero = Array.IndexOf(current, 0);
-                twoThou = current[zero + 1];
-            }
-            if (i == 3000)
-            {
-                var zero = Array.IndexOf(current, 0);
-                threeThou = current[zero + 1];
-            }
-            i++;
-            inputIdx++;
-            if (inputIdx >= input.Length) inputIdx = 0;
+
+            var zero = Array.IndexOf(current, 0);
+            res.Add(current[zero + 1]);
+
         }
 
 
-        return "";
+
+        return (res.Sum()).ToString();
     }
 
     public static int[] SpliceArray(int[] current, int move)
     {
         if (move == 0) return current.ToArray();
 
+        // TODO : This is wrong assumption
+        // There may be multiple values of {move} within the array
         var pos = Array.IndexOf(current, move);
         if (move >= 0)
         {
@@ -70,11 +64,9 @@ public class Day_20 : IDay
             if (newPos > current.Length)
             {
                 // Wrap
-                newPos = pos + 1 + move - (current.Length - 1);
-                newPos = newPos % (current.Length - 1);
-                newPos = newPos - 1;
-
-
+                newPos = pos + 1 + move - (current.Length);
+                newPos = newPos % (current.Length);
+                //newPos = newPos - 1;
 
                 var pre = new int[0];
                 var mid = new int[0];
@@ -141,7 +133,7 @@ public class Day_20 : IDay
                     var mid = current[newPos..pos];
                     var post = current[(pos + 1)..];
 
-                    var total = pre.Concat(mid).Concat(new int[] { move }).Concat(post).ToArray();
+                    var total = pre.Concat(new int[] { move }).Concat(mid).Concat(post).ToArray();
                     return total;
                 }
 
